@@ -1,0 +1,17 @@
+@startuml
+title
+  Functional requirements
+  |= ID |= Requirement name |= Acceptance criteria |
+  | 1 | account creation | Any unregistered user can create an account unless he already owns one |
+  | 2 | advertisement detail | Any user can look through the advertisements and look at the details of any advertisement |
+  | 3 | advertisement creation | Any registered user can create an advertisement |
+  | 4 | advertisement editing | Any registered user can edit their created advertisements |
+  | 5 | advertisement like | Any registered user can like advertisements to add to his liked folder |
+  | 6 | advertisement contacting | Any registered user can send a message to the owner of an advertisement |
+  | 7 | advertisement deletion | Any registered user can delete any of his created advertisements |
+  | 8 | account deletion | Any registered user can delete his account, \n in doing so, all of the user's advertisements are deleted as well |
+  | 9 | admin user account deletion | An admin can delete a user's account |
+  | 10 | admin advertisement deletion | An admin can delete a user's advertisement |
+  | 11 | admin advertisement editing | An admin can edit a user's advertisement |
+end title
+@enduml
