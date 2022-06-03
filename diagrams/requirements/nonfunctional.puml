@@ -1,0 +1,16 @@
+@startuml
+title
+    Non-functional Requirements
+    |= ID |= Requirement name |= Acceptance criteria |
+    | 1 | backend language | The system's backend is programmed in Typescript |
+    | 2 | frontend language | The system's frontend is programmed in React with Typescript |
+    | 3 | database | The system's database is made with Prisma as a MySql database |
+    | 4 | portability | The system should be able to run on any web browser |
+    | 5 | password length | The system's user needs to have a password of length at least 5 characters |
+    | 6 | username properties | The system's user needs to have username of length at least 3 characters\n only utf-8 characters have to be supported |
+    | 7 | system language | The system will be available in english only |
+    | 8 | username duplicity | The system cannot allow users with the same username |
+    | 9 | system responsiveness | The system should respond to any request within 10 seconds\n either show requested page or page with error description |
+    | 10 | data integrity | The system has to have quality, validated data |
+end title
+@enduml
