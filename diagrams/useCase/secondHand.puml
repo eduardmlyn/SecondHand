@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+together {
+    actor :Unregistered user: as unregistered
+    actor :User: as user
+    actor :Registered user: as registered
+}
+
+actor :Admin: as admin
+
+
+rectangle SecondHand {
+    left to right direction
+    together {
+        (create account) as (createAcc)
+        (show ad) as (show)
+    }
+    together {
+        (create ad) as (createAd)
+        (heart ad) as (heart)
+        together {
+            (delete account) as (deleteAccount)
+            (delete ad) as (deleteAd)
+            (edit ad) as (editAd)
+        }
+        (send want) as (sendWant)
+    }
+    unregistered --- (createAcc)
+    user --- (show)
+    registered --- (createAd)
+    registered --- (heart)
+    registered --- (deleteAd)
+    registered --- (deleteAccount)
+    registered --- (editAd)
+    registered --- (sendWant)
+    (deleteAccount) --- admin
+    (deleteAd) --- admin
+    (editAd) --- admin
+}
+
+user <|-right- unregistered
+user <|-left- registered
+@enduml
