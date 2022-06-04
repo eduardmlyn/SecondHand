@@ -28,7 +28,7 @@ entity admin {
 entity message {
     *id: number
     ---
-    advertisement: number <<FK>>
+    advertisement_id: number <<FK>>
     description: text
 }
 
