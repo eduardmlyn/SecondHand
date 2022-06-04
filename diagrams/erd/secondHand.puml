@@ -1,0 +1,40 @@
+@startuml
+entity user {
+    * id: number
+    ---
+    username: text
+    password: text
+    email: text
+    deleted: boolean
+}
+
+entity advertisement {
+    *id: number
+    ---
+    *user_id: number <<FK>>
+    name: text
+    edited: boolean
+    deleted: boolean
+}
+
+entity admin {
+    *id: number
+    ---
+    username: text
+    password: text
+    email: text
+}
+
+entity message {
+    *id: number
+    ---
+    advertisement: number <<FK>>
+    description: text
+}
+
+user ||--o{ advertisement
+message }o--|| advertisement
+user ||--o{ message
+admin ||--o{ user
+admin ||--o{ advertisement
+@enduml
