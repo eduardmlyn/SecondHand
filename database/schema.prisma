@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./database.db"
+}
+
+model Admin {
+    id String @id @default(uuid())
+    username String
+    password String
+    email String
+}
+
+model User {
+    id String @id @default(uuid())
+    username String
+    password String
+    email String
+    deleted Boolean @default(false)
+    liked Advertisement[]
+}
+
+model Message {
+    id String @id @default(uuid())
+    advertisement Advertisement @relation(fields: [advertisementId], references: [id])
+    description String
+    advertisementId String
+    // add user bind?
+}
+
+model Advertisement {
+    id String @id @default(uuid())
+    user User @relation(fields: [userId], references: [id])
+    name String
+    // make editedAt instead of edited?
+    edited Boolean @default(false)
+    deleted Boolean @default(false)
+    userId String
+    messages Message[]
+}
