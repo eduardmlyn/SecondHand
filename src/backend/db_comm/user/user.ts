@@ -5,71 +5,15 @@ export const addUser = async (
   password: string,
   email: string
 ) => {
-  try {
-    const test = await prisma.user.create({
-      data: {
-        username,
-        password,
-        email
-      }
-    })
-    console.log(test)
-    return "success"
-  } catch (e) {
-    return "error"
-  }
-}
-
-
-export const getUserByReview = async (reviewId: string) => {
-  try {
-    const user = await prisma.review.findUnique({
-      where: {
-        id: reviewId
-      },
-      select: {
-        user: true
-      }
-    })
-    if (user === null) {
-      return "null?!!"
+  const test = await prisma.user.create({
+    data: {
+      username,
+      password,
+      email
     }
-    console.log(user.user)
-    return user.user
-  } catch (e) {
-    return "err"
-  }
-}
-
-export const getUserById = async (id :string) => {
-  try {
-    const user = await prisma.user.findUnique({
-      where: {
-        id
-      }
-    })
-    console.log(user)
-    return user
-  } catch (e) {
-    return "error"
-  }
-}
-
-export const getUserByAdvertisement = async (id: string) => {
-  try {
-    const user = await prisma.advertisement.findUnique({
-      where: {
-        id
-      },
-      select: {
-        user: true
-      }
-    })
-    console.log(user)
-    return user
-  } catch (e) {
-    return "error"
-  }
+  })
+  console.log(test)
+  return test
 }
 
 export const updateUser = async (
@@ -78,37 +22,37 @@ export const updateUser = async (
   password: string,
   email: string
 ) => {
-  try {
-    const test = await prisma.user.update({
-      where: {
-        id: id
-      },
-      data: {
-        username,
-        password,
-        email
-      }
-    })
-    console.log(test)
-    return "success"
-  } catch (e) {
-    return "error"
-  }
+  return await prisma.user.update({
+    where: {
+      id: id
+    },
+    data: {
+      username,
+      password,
+      email
+    }
+  })
 }
 
 export const deleteUser = async (id: string) => {
-  try {
-    const test = await prisma.user.update({
-      where: {
-        id: id
-      },
-      data: {
-        deleted: true
+  const test = await prisma.user.update({
+    where: {
+      id: id
+    },
+    data: {
+      deleted: true,
+      reviews: {
+       deleteMany: {}
       }
-    })
-    console.log(test)
-    return "success"
-  } catch (e) {
-    return "error"
-  }
+    }
+  })
+  const res = await prisma.advertisement.updateMany({
+    where: {
+      userId: id
+    },
+    data: {
+      deleted: true
+    }
+  })
+  return {test, res}
 }
