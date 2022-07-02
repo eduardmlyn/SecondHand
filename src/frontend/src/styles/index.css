@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 49, 83, 0.2);
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+  width: 100%
+}
+
+.welcome-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-header {
+  font-size: xxx-large;
+  margin-bottom: 10rem;
+}
+
+.main-header, .welcome-page-buttons {
+  width: fit-content;
+}
+
+.welcome-page-buttons > a > button {
+  margin: 0 1rem;
+}
+
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  margin: 5rem 0 15rem 0;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+}
+
+.page-title {
+  font-size: xxx-large;
+}
+
+.register-form > form,
+.login-form > form,
+.data > form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.register-form > form > div,
+.login-form > form > div,
+.data > form > div,
+.advertisement-form > form > div {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 2rem 0;
+}
+
+.register-form > form > div > label,
+.login-form > form > div > label,
+.data > form > div > label {
+  margin-right: 2rem;
+}
+
+.advertisements {
+  width: 80%;
+
+}
+
+.advertisement {
+  border: 0.1rem solid darkblue;
+  margin-bottom: 2rem;
+}
+
+.link, .title {
+  text-decoration: none;
+  color: black;
+}
+
+.add-advertisement {
+  margin: 0 10% 2rem 0;
+  align-self: end;
+}
+
+.advertisement-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.advertisement-data__name {
+  font-size: larger;
+  padding: 0.5rem 0 0 2rem;
+  margin-bottom: 1rem;
+  color: #0B6623;
+}
+
+.advertisement-data__description {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info--name,
+.user-info--email {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 2rem 0;
+  justify-content: space-between;
+}
+
+.user-info--name > div,
+.user-info--email > div {
+  padding-right: 1rem;
+}
+
+.advertisement-data {
+  width: 40%;
+}
+.advertisement-data > form{
+  display: flex;
+  flex-direction: column;
+}
+
+.advertisement-data > form > div {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 2rem 0;
+}
+
+.advertisement-data > form > div > label {
+  margin: 0 2rem 0 0;
+}
+
+.advertisement-data > form > div > textarea,
+.advertisement-form > form > div > textarea{
+  width: 100%;
+}
+
+.advertisement-data > form > button {
+  width: 20%;
+  align-self: center;
+}
+
+.advertisement-close-up {
+  width: 80%;
+}
+
+.advertisement-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.advertisement-info-name {
+  font-size: xx-large;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.advertisement-info-name,
+.advertisement-info-description,
+.advertisement-info-creation {
+  margin: 0 0 2rem;
+}
+
+.advertisement-description {
+  border: 0.1rem solid blue;
+  margin-top: 1rem;
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+
+.advertisement-reviews {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  border: 0.1rem solid darkblue;
+  margin-bottom: 2rem;
+}
+
+.review-name, .review-stars, .review-text {
+  margin: 0 0 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.advertisement-form > form > button {
+  width: 20%;
+  align-self: center;
+  margin-bottom: 1rem;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.clickable {
+  color: darkgoldenrod;
+}
+
+.error {
+  color: darkred;
+}
